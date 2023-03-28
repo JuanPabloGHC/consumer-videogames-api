@@ -1,0 +1,28 @@
+body{
+    background-image: url(https://images4.alphacoders.com/115/1153449.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1{
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
+h3{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+div.card{
+    background-color: gainsboro;
+}
+
+
+

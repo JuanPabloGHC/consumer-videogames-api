@@ -15,8 +15,17 @@
             <div>
                 <form method="post">
                     <div>
-                        <input type="text" name="name" id="name" placeholder="Write a videogame...">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <nav class="navbar bg-body-tertiary">
+                            <div class="container-fluid">
+                                <a class="navbar-brand">BUSCADOR</a>
+                                <form class="d-flex" role="search">
+                                    <input type="search" name="name" id="name" placeholder="Write a videogame..." class="form-control me-2" aria-label="Search">
+                                    <br>
+                                    <br>
+                                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                                </form>
+                            </div>
+                        </nav>
                     </div>
                 </form>
             </div>
@@ -28,7 +37,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {% for i in response.videogames %}
                     <div class="col">
-                        <div class="card shadow-sm d-flex align-items-center">
+                        <div class="card shadow-sm d-flex align-items-center" id="card">
                             <img src={{i.image1}} width="100" heitgh="100">
                             <!-- <svg class="bd-placeholder-img card-img-top" width="30%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                                 <title>Placeholder</title>
@@ -50,3 +59,11 @@
 
 
 {% endblock %}
+
+<!--
+
+
+
+
+
+-->>
