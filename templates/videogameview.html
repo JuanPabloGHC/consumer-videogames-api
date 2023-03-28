@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for i in response.videogames %}
+
+    <img src={{i.image2}} width="100%"  height="300px">
+    <!-- <svg class="bd-placeholder-img card-img-top" width="30%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#55595c"></rect>
+        <text x="50%" y="50%" fill="#eceeef" dy=".3em">{{i.name}}</text>
+    </svg> -->
+    <h1>{{i.name}}</h1>
+    <h3>Fecha: </h3>
+    <p>{{i.anio}}</p>
+    <h3>Autor: </h3>
+    <p>{{i.autor}}</p>
+    <!-- <p class="card-text">{{i.descripcion}}</p> -->
+    <h3>Descripción: </h3>
+    <p>{{i.descripcion}}</p>
+    <a href="/" class="btn btn-sm btn-outline-secondary">
+        Back
+        <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+    </a>
+
+{% endfor %}
+
+{% endblock %}

@@ -6,6 +6,23 @@
         <h1>VIDEOGAMES</h1>
     </div>
 
+    <div class="text-center">
+        <div id="Agregar" style="display: '';">
+            <div>
+                <br>
+                <h3>Buscar Videojuego</h3>
+            </div>
+            <div>
+                <form method="post">
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Write a videogame...">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -20,14 +37,16 @@
                             </svg> -->
                             <h1>{{i.name}}</h1>
                             <!-- <p class="card-text">{{i.descripcion}}</p> -->
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            <a href="/view/{{i.id}}" class="btn btn-sm btn-outline-secondary">
+                                View
+                                <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button> -->
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
-        
             </div>
         </div>
-      </div>
+    </div>
 
 
 {% endblock %}

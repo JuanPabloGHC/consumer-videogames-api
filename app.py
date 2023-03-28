@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 uri = 'https://videogames-api-ip7s.onrender.com/api/videogames'
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'GET':
         items = requests.get(uri).json()
@@ -16,6 +16,32 @@ def home():
         response = {"videogames": videogames}
         
         return render_template('index.html', response = response)
+    else:
+        name = request.form['name']
+        if(name != "" and not name.isspace()):
+            items = requests.get(uri).json()
+            videogames = []
+            for item in items:
+                if(item['name'] == name):
+                    videogames.append(item)
+
+            response = {"videogames": videogames}
+            
+            return render_template('index.html', response = response)
+        else:
+            return redirect('/')
+    
+@app.route('/view/<int:id>', methods = ['GET'])
+def view(id):
+    if request.method == 'GET':
+        items = requests.get(uri).json()
+        videogames = []
+        for item in items:
+            if item['id'] == id:
+                videogames.append(item)
+        response = {"videogames": videogames}
+
+        return render_template('videogameview.html', response = response)
     else:
         return abort(500)
     
