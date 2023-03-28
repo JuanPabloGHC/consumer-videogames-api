@@ -18,11 +18,13 @@ def home():
         return render_template('index.html', response = response)
     else:
         name = request.form['name']
+        nameLower = name.lower()
         if(name != "" and not name.isspace()):
             items = requests.get(uri).json()
             videogames = []
             for item in items:
-                index = item['name'].find(name)
+                itemLower = item['name'].lower()
+                index = itemLower.find(nameLower)
                 if(index != -1):
                     videogames.append(item)
 
