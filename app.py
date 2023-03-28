@@ -22,7 +22,8 @@ def home():
             items = requests.get(uri).json()
             videogames = []
             for item in items:
-                if(item['name'] == name):
+                index = item['name'].find(name)
+                if(index != -1):
                     videogames.append(item)
 
             response = {"videogames": videogames}
